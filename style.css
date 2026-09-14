@@ -1,0 +1,193 @@
+header{
+    text-align: center;
+    background-color:#F5F3FF;
+    padding: 10px 20px 14px;
+}
+header p{
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+}
+.title{
+    margin: 0 0 12px;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bold;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    padding: 24px 32px;
+    align-items: start;
+}
+.list{
+    background-color: antiquewhite;
+}
+.editToDo{
+    background-color:aliceblue;
+}
+.create{
+    background-color:burlywood;
+}
+.list, .editToDo, .create{
+    padding: 24px;
+    border-radius: 20px;
+}
+.leftPanel{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.todoList{
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    column-gap: 10px;
+    row-gap: 4px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: white;
+}
+
+.todoList input{
+    grid-row: span 2;
+    margin-top: 4px;
+}
+
+.todoList label{
+    font-weight: bold;
+}
+
+.todoList time{
+    font-size: 14px;
+    color: darkred;
+}
+
+.detailToDo{
+    padding: 16px 0;
+    border-bottom: 1px solid #c7dceb;
+    margin-top: 0;
+    padding-top: 0;
+}
+.detailToDo:last-child{
+    border-bottom: none;
+}
+
+.detailToDo h3{
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.detailToDo select{
+    margin-left: 8px;
+    padding: 5px 8px;
+    border: 1px solid #F5F3FF;
+    border-radius: 10px;
+}
+
+.list h2, .editToDo h2, .create h2{
+    margin: 0 0 24px;
+    font-size: 24px;
+}
+.deadline{
+    color: darkred;
+}
+.sbNotes{
+    font-weight: bold;
+}
+.notes{
+    background-color: antiquewhite;
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 12px;
+    border-left: 5px solid #e5bc83;
+}
+
+.rightPanel{
+    width: 100%;
+}
+
+.editToDo h2{
+    background-color:lightcoral;
+    padding: 24px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+@media(max-width: 768px){
+    header{
+        padding: 16px;
+    }
+    .title{
+        font-size: 32px;
+    }
+    header p{
+        font-size: 16px;
+    }
+    main{
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px 10px 16px 10px;
+    }
+    .leftPanel, .rightPanel{
+        width: 100%;
+    }
+
+    .list, .editToDo, .create{
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .list h2, .editToDo h2, .create h3{
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+    .editToDo h2{
+        padding: 16px;
+    }
+    .todoList{
+        grid-template-columns: 20px 1fr;
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+    .todoList label{
+        font-size: 16px;
+    }
+    .todoList time{
+        font-size: 13px;
+    }
+    .detailToDo h3{
+        font-size: 20px;
+    }
+    .notes{
+        padding: 12px;
+    }
+}
+
+button{
+    background-color:darksalmon;
+    color: #3f2d20;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 12px;
+}
+
+footer{
+    text-align:center;
+    background-color: #F5F3FF;
+    padding: 20px;
+    margin-top: 24px;
+    width: 100%;
+    text-align: center;
+}
+
+footer p{
+    margin: 0;
+    font-size: 14px;
+    color:#3f2d20;
+}

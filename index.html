@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Style Warrior</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header> 
+        <h1 class="title">Todo List</h1>
+        <p>Hello, Buddie! You can survive one more day!</p>
+
+    </header>
+    <main>
+        <div class="leftPanel">
+        <section class="list">
+            <h2>List of Todos</h2>
+            <article class="todoList">
+                <input type="checkBox" id="toDo1">
+                <div>
+                    <label for="toDo1">Makan</label>
+                    <p><time datetime="2026-09-16T08:30">16 September 16.30</time></p>
+                </div>
+            </article>
+            <article class="todoList">
+                <input type="checkBox" id="toDo2">
+                <div>
+                    <label for="toDo2">Ngerjain PWEB</label>
+                    <p><time datetime="2026-09-17T08:30">17 September 08.30</time></p>
+                </div>
+            </article>
+            <article class="todoList">
+                <input type="checkBox" id="toDo3">
+                <div>
+                    <label for="toDo3">Ngerjain PBO</label>
+                    <p><time datetime="2026-09-17T17:30">17 September 17.30</time></p>
+                </div>
+            </article>
+        </section>
+             <form class="create">
+            <h3 class="forCreate">Create a New To Do</h3>
+            <label for="newList">New To Do:</label>
+            <input type="text" id="newList" name="newList">
+            <br><br>
+            <label for="dateList">Deadline:</label>
+            <input type="datetime-local" id="dateList" name="dateList">
+            <br><br>
+            <label for="notesInput">Notes:</label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            <button type="submit">Add</button>
+             </form>
+     </div>
+
+     <div class="rightPanel">
+        <section class="editToDo">
+            <h2>Detail To Do</h2>
+            <article class="detailToDo">
+                <h3 class="todos">Makan</h3>
+                <form>
+                    <label for="progress">Status:</label>
+                    <select id="progress" name="progress">
+                        <option value="">Pilih status</option>
+                        <option value="done">Done</option>
+                        <option value="onProgress">On Progress</option>
+                        <option value="none">None</option>
+                    </select>
+                </form>
+                <p class="deadline">
+                    Deadline:
+                    <time datetime="2026-9-16T16:30">16 September 16.30</time>
+                </p>
+
+                <p class="priority">
+                    Prioritas: Tinggi
+                </p>
+                <div class="notes">
+                    <p class="sbNotes">Notes:</p>
+                    Beli makanan under 15k. 
+                    <span>
+                        <p>
+                            <a href="https://www.tripadvisor.co.id/Restaurants-g297715-zfp16-Surabaya_East_Java_Java.html">Rekomendasi Makanan</a>
+                        </p>
+                        
+                    </span>
+                </div>
+            </article>
+       
+         <article class="detailToDo">
+                <h3 class="todos">Ngerjain PWEB</h3>
+                <p>
+                    <label for="progress">Status:</label>
+                    <select id="progress" name="progress">
+                        <option value="">Pilih status</option>
+                        <option value="done">Done</option>
+                        <option value="onProgress">On Progress</option>
+                        <option value="none">None</option>
+                    </select>
+                </p>
+                <p class="deadline">
+                    Deadline:
+                    <time datetime="2026-9-17T08:30">17 September 08.30</time>
+                </p>
+
+                <p class="priority">
+                    Prioritas: Tinggi
+                </p>
+                <div class="notes">
+                    <p class="sbNotes">Notes:</p>
+                    Bermain game css dan flexbox
+                    <span>
+                        <p>
+                            <ul>
+                                <li>
+                                    <a href="https://cssgridgarden.com/">Grid Garden</a>
+                                </li>
+                                <li>
+                                    <a href="https://flexboxfroggy.com/">Flexbox</a>
+                                </li>
+                            </ul>
+                            
+                        </p>
+                        
+                    </span>
+                </div>
+            </article>
+            <article class="detailToDo">
+                <h3 class="todos">Ngerjain PBO</h3>
+                <p>
+                    <label for="progress">Status:</label>
+                    <select id="progress" name="progress">
+                        <option value="">Pilih status</option>
+                        <option value="done">Done</option>
+                        <option value="onProgress">On Progress</option>
+                        <option value="none">None</option>
+                    </select>
+                </p>
+                <p class="deadline">
+                    Deadline:
+                    <time datetime="2026-9-17T17:30">17 September 17.30</time>
+                </p>
+
+                <p class="priority">
+                    Prioritas: Sedang
+                </p>
+                <div class="notes">
+                    <p class="sbNotes">
+                        Notes:
+                    </p>
+                    Mempelajari link materi.
+                    <span>
+                        <p>
+                           <a href="https://profitina.com/course/bachelor/2026-20271-ef234302-object-oriented-programming-d/">Link Materi</a> 
+                        </p>
+                        
+                    </span>
+                </div>
+            </article>
+        </div>
+     </section>
+     </main>
+     <footer>
+        <p>&copy; 2026 Todo App. Pemrograman Web Week 2</p>
+     </footer>
+
+</body>
+</html>
