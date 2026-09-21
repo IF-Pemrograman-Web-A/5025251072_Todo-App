@@ -6,10 +6,14 @@ Menambahkan JavaScript pada ToDo App
 **1. Implement DOM Manipulation, catch the input when creating a new Todo,
 and directly show it in the list without refreshing**
 
+**Menambahkan To Do "Beli Sembako"**
 <img width="1511" height="860" alt="Screenshot 2026-09-21 at 13 53 45" src="https://github.com/user-attachments/assets/015abed1-a865-4028-ab2f-3febf1e40566" />
 
+**"Beli sembako" Masuk ke dalam daftar list**
+<img width="1600" height="914" alt="WhatsApp Image 2026-09-21 at 14 21 55" src="https://github.com/user-attachments/assets/df53dee4-0371-4a5b-908a-4b98c06b7da0" />
 
-<img width="1512" height="859" alt="Screenshot 2026-09-21 at 13 56 12" src="https://github.com/user-attachments/assets/de316ac6-f384-440a-9d81-6137cbb0ed40" />
+
+<img width="1600" height="903" alt="WhatsApp Image 2026-09-21 at 14 22 24" src="https://github.com/user-attachments/assets/95d9c403-36d3-45ae-b851-38bf23098886" />
 
 
 **2. Implement buttons for edit and delete, and a checkbox for marking the Todo
