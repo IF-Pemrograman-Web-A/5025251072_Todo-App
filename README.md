@@ -3,6 +3,8 @@ Tugas Pemrograman Web Week 3
 
 Menambahkan JavaScript pada ToDo App
 
+https://if-pemrograman-web-a.github.io/5025251072_Todo-App/
+
 **1. Implement DOM Manipulation, catch the input when creating a new Todo,
 and directly show it in the list without refreshing**
 
