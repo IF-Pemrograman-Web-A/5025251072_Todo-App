@@ -19,11 +19,12 @@ and directly show it in the list without refreshing**
 **2. Implement buttons for edit and delete, and a checkbox for marking the Todo
 as complete**
 
-<img width="1600" height="910" alt="WhatsApp Image 2026-09-21 at 13 59 42" src="https://github.com/user-attachments/assets/54983df3-f565-46eb-bfba-b2cb4ce023b0" />
+**Menekan tombol "edit" pada list "Makan" kemudian keterangan menjadi "...under 20k"**
 
-<img width="1600" height="911" alt="WhatsApp Image 2026-09-21 at 14 00 25" src="https://github.com/user-attachments/assets/0b2301da-4b4a-4790-a6f9-5dbee98fe7af" />
+<img width="1600" height="923" alt="WhatsApp Image 2026-09-21 at 14 24 54" src="https://github.com/user-attachments/assets/04a25d46-bc00-4c76-b7cd-92886b238e38" />
 
-**Edit**
+
+**Edit: Berhasil dilakukan penyuntingan**
 
 <img width="1600" height="805" alt="WhatsApp Image 2026-09-21 at 14 08 32" src="https://github.com/user-attachments/assets/f91bcae7-6dc4-43a2-b853-8af9605af3e3" />
 
