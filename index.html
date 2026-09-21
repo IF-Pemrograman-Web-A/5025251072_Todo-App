@@ -18,6 +18,7 @@
     <main>
         <div class="leftPanel">
         <section class="list">
+            <div id="todoList">
             <h2>List of Todos</h2>
             <article class="todoList">
                 <input type="checkBox" id="toDo1">
@@ -40,6 +41,7 @@
                     <p><time datetime="2026-09-17T17:30">17 September 17.30</time></p>
                 </div>
             </article>
+            </div>
         </section>
              <form class="create">
             <h3 class="forCreate">Create a New To Do</h3>
@@ -49,7 +51,7 @@
             <label for="dateList">Deadline:</label>
             <input type="datetime-local" id="dateList" name="dateList">
             <br><br>
-            <label for="notesInput">Notes:</label>
+            <label for="message">Notes:</label>
             <textarea id="message" name="message" rows="4" cols="50"></textarea>
             <button type="submit">Add</button>
              </form>
@@ -165,6 +167,6 @@
      <footer>
         <p>&copy; 2026 Todo App. Pemrograman Web Week 2</p>
      </footer>
-
+<script src="newScript.js"></script>
 </body>
 </html>
