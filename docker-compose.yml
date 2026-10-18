@@ -1,0 +1,38 @@
+services:
+  web:
+    build: .
+    container_name: todo_web
+    ports: 
+      - "8080:80"
+    volumes : 
+      - ./src:/var/www/html
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASS: root
+      DB_NAME: todo_app
+    
+    depends_on:
+      - db
+    
+  db:
+    image: mysql:8.4
+    container_name: todo_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo_app
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    ports:
+      - "8081:80"
+    environment:
+     PMA_HOST : db
+    depends_on:
+      - db
+  
+volumes:
+  db_data:

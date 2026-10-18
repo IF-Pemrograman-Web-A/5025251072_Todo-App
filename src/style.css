@@ -277,3 +277,70 @@ footer p{
 [data-theme="dark"] .deadline,
 [data-theme="dark"] .todoList time{ color: #ff9b9b}
 [data-theme="dark"] .editToDo h2{ background-color:#8a3b3b; color: #fff}
+
+.menu-bar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background-color: #F5F3FF;
+    border-top: 1px solid #e0dcf5;
+}
+.menu-bar > a{
+    padding: 10px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: "Outfit", sans-serif;
+    color: #3f2d20;
+    background-color: antiquewhite;
+}
+.menu-bar > a[aria-current="page"]{
+    background-color: darksalmon;
+    font-weight: bold;
+}
+.user-switch{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+}
+.btn{
+    display: inline-flex;
+    align-items: center;
+    background-color: darksalmon;
+    color: #3f2d20;
+    border-radius: 10px;
+    padding: 5px 12px;
+    min-height: 44px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.actions{
+    display: flex;
+    gap: 8px;
+    margin-top: 5px;
+}
+.actions form{ margin: 0; }
+.owner{ font-size: 0.8125rem; color: #6b5b73; }
+.flash{
+    margin: 16px 32px 0;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background-color: #dff5e1;
+    color: #17391b;
+}
+.detailToDo form{ margin: 8px 0; }
+
+[data-theme="dark"] .menu-bar{ background-color: #14141a; border-top-color: #2b2b34; }
+[data-theme="dark"] .menu-bar > a{ background-color: #2b2b34; color: #eee; }
+[data-theme="dark"] .menu-bar > a[aria-current="page"]{ background-color: #7a5a46; color: #fff; }
+[data-theme="dark"] .btn{ background-color: #7a5a46; color: #fff; }
+[data-theme="dark"] .owner{ color: #c9c0d0; }
+[data-theme="dark"] .flash{ background-color: #1f3a24; color: #dff5e1; }
+
+@media(max-width: 768px){
+    .user-switch{ margin-left: 0; }
+    .flash{ margin: 12px 10px 0; }
+}
