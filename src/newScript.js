@@ -124,3 +124,42 @@ checkReminders();
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js');
 }
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', async () => {
+    try {
+      const reg = await navigator.serviceWorker.register('./sw.js');
+      console.log('SW registered:', reg.scope);
+    } catch (err) {
+      console.error('SW registration failed:', err);
+    }
+  });
+}
+let deferredPrompt;
+const installBtn = document.querySelector('#install-button');
+const installStatus = document.querySelector('#status');
+
+if (installBtn) {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();          // cegah mini-infobar bawaan browser
+    deferredPrompt = e;          // simpan event untuk dipakai nanti
+    installBtn.hidden = false;   // tampilkan tombol
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();     // munculkan dialog install
+    const { outcome } = await deferredPrompt.userChoice;
+    if (installStatus) {
+      installStatus.textContent = outcome === 'accepted'
+        ? 'Aplikasi berhasil di-install.'
+        : 'Install dibatalkan.';
+    }
+    deferredPrompt = null;
+    installBtn.hidden = true;
+  });
+
+  window.addEventListener('appinstalled', () => {
+    installBtn.hidden = true;
+  });
+}

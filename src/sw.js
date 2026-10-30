@@ -1,11 +1,25 @@
-const CACHE = 'todo-v2';
-const SHELL = ['./', './index.php', './style.css', './newScript.js'];
+const CACHE = 'todo-v3';
+const SHELL = [
+   './style.css', 
+   './newScript.js',
+   './offline.html',
+   './manifest.webmanifest',
+   './img/icon-192.png',
+   './img/icon-512.png'
+];
 
+//Halaman utama coba disimpan tapi tidak boleh menggagalkan instal
+const PAGES = ['./', './index.php'];
 // Install Service Worker
 self.addEventListener('install', (e) =>
   e.waitUntil(
     caches.open(CACHE)
-      .then((c) => c.addAll(SHELL))
+      .then(async(c) => {
+        await c.addAll(SHELL);
+        await Promise.all(PAGES.map((p) =>
+          c.add(p).catch(() => {}
+      )))
+      })
       .then(() => self.skipWaiting())
   )
 );
@@ -16,7 +30,7 @@ self.addEventListener('activate', (e) =>
     caches.keys()
       .then((keys) =>
         Promise.all(
-          keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))
+          keys.filter((k) => k.startsWith('todo-') && k !== CACHE).map((k) => caches.delete(k))
         )
       )
       .then(() => self.clients.claim())
@@ -25,18 +39,42 @@ self.addEventListener('activate', (e) =>
 
 // Mengambil halaman dari jaringan terlebih dahulu, cache digunakan saat offline
 self.addEventListener('fetch', (e) => {
-  if (e.request.method !== 'GET') return;
+  const req = e.request;
+  const url = new URL(req.url);
 
-  e.respondWith(
-    fetch(e.request)
+  if (req.method !== 'GET' || url.origin !== location.origin) return;
+  if (url.pathname.includes('/actions/')) return;
+
+  if(req.mode === 'navigate'){
+     e.respondWith(
+    fetch(req)
       .then((res) => {
-        if (res.ok) {
+        if (res.ok && !res.redirected) {
           const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put(e.request, copy));
+          caches.open(CACHE).then((c) => c.put(req, copy));
         }
         return res;
       })
-      .catch(() => caches.match(e.request))
+      .catch(async() =>
+      (await caches.match(req)) ||
+      (await caches.match('./')) ||
+      (await caches.match('./index.php')) ||
+      caches.match('./offline.html')
+      )
+  );
+  return;
+  }
+
+  e.respondWith(
+    caches.open(CACHE).then(async(cache) =>{
+      const cached = await cache.match(req);
+      const fetching = fetch(req) .then((res)=> {
+        if (res.ok) cache.put(req, res.clone());
+        return res;
+      })
+      .catch(() => cached || Response.error());
+      return cached || fetching;
+  })
   );
 });
 
