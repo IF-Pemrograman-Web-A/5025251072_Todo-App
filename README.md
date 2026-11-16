@@ -1,23 +1,75 @@
 # 5025251072_Todo-App
-Tugas Pemrograman Web week 2 (Membuat todo list sederhana dengan HTML dan CSS)
-**- Penampilan Desktop**
 
-<img width="1508" height="860" alt="Screenshot 2026-09-14 at 17 37 31" src="https://github.com/user-attachments/assets/a9ea980d-4335-46bf-bd21-f592b67d20fc" />
+1. Migrate the CRUD backend into a REST API using the correct methods (GET, POST, PUT/PATCH, and DELETE).
 
-
-<img width="1510" height="859" alt="Screenshot 2026-09-14 at 17 38 18" src="https://github.com/user-attachments/assets/8e9451b4-55a4-471a-849d-752c34f5e143" />
-
-**- Penampilan Mobile**
-
-<img width="340" height="734" alt="Screenshot 2026-09-14 at 17 38 59" src="https://github.com/user-attachments/assets/4403853c-d075-4883-81fa-8f8c9a38ad55" />
+   - Daftar todo (GET)
+     
+     <img width="1016" height="795" alt="Screenshot 2026-11-16 at 17 26 02" src="https://github.com/user-attachments/assets/d692e27a-c2c6-43da-b070-bbad17b3619d" />
 
 
-<img width="342" height="739" alt="Screenshot 2026-09-14 at 17 39 21" src="https://github.com/user-attachments/assets/256a1377-8bfa-48a6-b4d5-25a4b916b556" />
+     <img width="1022" height="798" alt="Screenshot 2026-11-16 at 17 27 11" src="https://github.com/user-attachments/assets/5c8f118e-477b-495e-82bf-1175766bfa09" />
+
+
+   - Todo berhasil dibuat dan muncul di database (POST)
+
+   <img width="1033" height="799" alt="Screenshot 2026-11-16 at 17 32 48" src="https://github.com/user-attachments/assets/c2c43537-4fa2-45b0-bd06-636257cdee94" />
+
+
+   - Data Todo berhasil diperbarui (PUT)
+
+     <img width="1035" height="793" alt="Screenshot 2026-11-16 at 17 38 34" src="https://github.com/user-attachments/assets/93d96574-9614-46c0-94c3-00c3af329ffa" />
+
+
+   - Status berubah tanpa mengubah field lain (PATCH)
+
+     <img width="1033" height="796" alt="Screenshot 2026-11-16 at 17 40 15" src="https://github.com/user-attachments/assets/822327ac-31d3-40af-b721-405963ddfd48" />
+
+
+   - Todo berhasil dihapus dari database (DELETE)
+
+     <img width="1042" height="803" alt="Screenshot 2026-11-16 at 17 41 21" src="https://github.com/user-attachments/assets/f80dadcc-08bf-4856-b306-e0446bcf8a5b" />
+
+
+2. Implement the correct response code for every endpoint.
+
+    - Daftar todo (GET)
+     
+     <img width="1016" height="795" alt="Screenshot 2026-11-16 at 17 26 02" src="https://github.com/user-attachments/assets/d692e27a-c2c6-43da-b070-bbad17b3619d" />
+
+
+     <img width="1022" height="798" alt="Screenshot 2026-11-16 at 17 27 11" src="https://github.com/user-attachments/assets/5c8f118e-477b-495e-82bf-1175766bfa09" />
+
+
+   - Todo berhasil dibuat dan muncul di database (POST)
+
+   <img width="1033" height="799" alt="Screenshot 2026-11-16 at 17 32 48" src="https://github.com/user-attachments/assets/c2c43537-4fa2-45b0-bd06-636257cdee94" />
+
+
+   - Data Todo berhasil diperbarui (PUT)
+
+     <img width="1035" height="793" alt="Screenshot 2026-11-16 at 17 38 34" src="https://github.com/user-attachments/assets/93d96574-9614-46c0-94c3-00c3af329ffa" />
+
+
+   - Status berubah tanpa mengubah field lain (PATCH)
+
+     <img width="1033" height="796" alt="Screenshot 2026-11-16 at 17 40 15" src="https://github.com/user-attachments/assets/822327ac-31d3-40af-b721-405963ddfd48" />
+
+
+   - Todo berhasil dihapus dari database (DELETE)
+
+     <img width="1042" height="803" alt="Screenshot 2026-11-16 at 17 41 21" src="https://github.com/user-attachments/assets/f80dadcc-08bf-4856-b306-e0446bcf8a5b" />
+
+
+3. Implement the wrong response code for every endpoint
+
+   
 
 
 
-<img width="343" height="741" alt="Screenshot 2026-09-14 at 17 39 46" src="https://github.com/user-attachments/assets/cc240e1f-b2f0-4bbf-a44d-3e9fd48af6e3" />
+
+     
 
 
+     
 
 
