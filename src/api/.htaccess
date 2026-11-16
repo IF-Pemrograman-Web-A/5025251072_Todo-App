@@ -1,0 +1,4 @@
+RewriteEngine On
+# Jika yang diminta bukan file asli, serahkan ke index.php (front controller)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]

@@ -7,7 +7,8 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(64) NOT NULL
+    name VARCHAR(64) NOT NULL,
+    api_key VARCHAR(64) NOT NULL UNIQUE
 );
 
 CREATE TABLE todos(
@@ -25,7 +26,10 @@ CREATE TABLE todos(
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
-INSERT INTO users (name) VALUES ('Amel'), ('Budi'), ('Hesti');
+INSERT INTO users (name, api_key) VALUES
+ ('Amel', 'todo_amel_9f3c1a72'), 
+ ('Budi', 'todo_budi_4b8e5d10'), 
+ ('Hesti', 'todo_hesti_c27a60e9');
 
 INSERT INTO todos (user_id, title, deadline, priority, status, notes, is_shared) VALUES
 (1, 'Makan', '2026-10-19 12:00:00', 'Tinggi', '', 'Beli makanan under 15k', 0),

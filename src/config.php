@@ -1,7 +1,7 @@
 <?php
 // config.php - koneksi database + fungsi bantu (dipakai semua halaman)
 date_default_timezone_set('Asia/Jakarta');
-session_start();
+if (!defined('API_MODE')) session_start();
 
 function e($s) { return htmlspecialchars((string)($s ?? ''), ENT_QUOTES, 'UTF-8'); }
 
@@ -14,8 +14,13 @@ try {
     getenv('DB_NAME') ?: 'todo_app'
   );
   $conn->set_charset('utf8mb4');
+  $conn->query("SET time_zone = '+07:00' ");
 } catch (mysqli_sql_exception $ex) {
   http_response_code(500);
+  if(defined('API_MODE')){
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['error' => ['status' => 500, 'message' => 'Koneksi database gagal']]);
+  }
   die('Koneksi database gagal: ' . e($ex->getMessage()) .
       '<br>Kalau baru menjalankan Docker, tunggu ~30 detik lalu refresh.');
 }

@@ -1,4 +1,4 @@
-const CACHE = 'todo-v3';
+const CACHE = 'todo-v4';
 const SHELL = [
    './style.css', 
    './newScript.js',
@@ -83,3 +83,4 @@ self.addEventListener('notificationclick', (e) => {
   e.notification.close();
   e.waitUntil(self.clients.openWindow('./'));
 });
+if (url.pathname.includes('/actions/') || url.pathname.includes('/api/')) return;

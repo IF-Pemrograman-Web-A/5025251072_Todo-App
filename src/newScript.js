@@ -163,3 +163,155 @@ if (installBtn) {
     installBtn.hidden = true;
   });
 }
+
+
+const API_KEY = document.querySelector('meta[name="api-key"]')?.content || '';
+
+// Satu fungsi untuk semua request ke API
+async function api(method, url, body) {
+    const options = {
+        method,
+        headers: {
+            'Accept': 'application/json',
+            'X-API-Key': API_KEY
+        }
+    };
+
+    if (body !== undefined) {
+        options.headers['Content-Type'] = 'application/json';
+        options.body = JSON.stringify(body);
+    }
+
+    let res;
+
+    try {
+        res = await fetch(url, options);
+    } catch (err) {
+        // Jaringan putus / offline
+        throw new Error('Tidak ada koneksi ke server. Coba lagi saat online.');
+    }
+
+    const data = res.status === 204
+        ? null
+        : await res.json().catch(() => null);
+
+    if (!res.ok) {
+        const fields = data?.error?.fields || {};
+        const detail = Object.values(fields).join('; ');
+
+        throw new Error(
+            (data?.error?.message || 'Terjadi kesalahan') +
+            (detail ? ': ' + detail : '')
+        );
+    }
+
+    return data;
+}
+
+
+// Pesan sukses/gagal yang terlihat di layar + dibacakan screen reader
+function showMessage(msg, isError = false) {
+    let box = document.querySelector('.flash');
+
+    if (!box) {
+        box = document.createElement('p');
+        box.className = 'flash';
+        document.querySelector('main').before(box);
+    }
+
+    box.textContent = msg;
+    box.setAttribute('role', isError ? 'alert' : 'status');
+
+    announce(msg);
+}
+
+// Pesan yang harus tetap tampil setelah halaman dimuat ulang
+function reloadWith(msg, page) {
+    sessionStorage.setItem('flash', msg);
+    location.href = 'index.php?page=' + page;
+}
+
+const savedFlash = sessionStorage.getItem('flash');
+
+if (savedFlash) {
+    sessionStorage.removeItem('flash');
+    showMessage(savedFlash);
+}
+
+
+ // CREATE (POST) dan UPDATE (PATCH) memakai form yang sama
+const todoForm = document.querySelector('form.create');
+
+todoForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const f = todoForm.elements;
+    const id = todoForm.dataset.id; // ada = mode edit
+
+    const payload = {
+        title: f.title.value.trim(),
+        deadline: f.deadline.value || null,
+        notify_at: f.notify_at.value || null,
+        priority: f.priority.value,
+        notes: f.notes.value.trim(),
+        is_shared: f.is_shared.checked
+    };
+
+    if (f.image_data.value) {
+        payload.image_data = f.image_data.value;
+    }
+
+    if (f.remove_image && f.remove_image.checked) {
+        payload.remove_image = true;
+    }
+
+    try {
+        if (id) {
+            await api('PATCH', `api/todos/${id}`, payload);
+            reloadWith('Todo berhasil diperbarui.', todoForm.dataset.page);
+        } else {
+            await api('POST', 'api/todos', payload);
+            reloadWith(
+                'Todo berhasil ditambahkan.',
+                payload.is_shared ? 'shared' : 'personal'
+            );
+        }
+    } catch (err) {
+        showMessage(err.message, true);
+    }
+});
+
+// UPDATE status (PATCH)
+document.querySelectorAll('.status-form').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        try {
+            await api('PATCH', `api/todos/${form.dataset.id}`, {
+                status: form.elements.status.value
+            });
+
+            reloadWith('Status todo diperbarui.', form.dataset.page);
+        } catch (err) {
+            showMessage(err.message, true);
+        }
+    });
+});
+
+// DELETE
+document.querySelectorAll('.delete-form').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (!confirm('Hapus todo ini?')) return;
+
+        try {
+            await api('DELETE', `api/todos/${form.dataset.id}`);
+            reloadWith('Todo berhasil dihapus.', form.dataset.page);
+        } catch (err) {
+            showMessage(err.message, true);
+        }
+    });
+});
+
+
