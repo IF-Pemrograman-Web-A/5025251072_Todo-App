@@ -123,10 +123,43 @@
   
      <img width="1044" height="796" alt="Screenshot 2026-11-16 at 18 13 36" src="https://github.com/user-attachments/assets/16c4aa5c-024f-42a7-962b-c6b4aa178cd9" />
 
+     <img width="1026" height="797" alt="Screenshot 2026-11-16 at 18 16 24" src="https://github.com/user-attachments/assets/ef3bbc1b-aa8c-4e60-8e22-a8dc7af5dc4e" />
+
 
    - Membaca private Todo milik user lain
 
      <img width="1039" height="789" alt="Screenshot 2026-11-16 at 18 14 32" src="https://github.com/user-attachments/assets/3772dc78-1368-431e-94d8-a31c07de4cab" />
+
+   - 	Tampilan web menampilkan pesan error dari API
+
+   <img width="1512" height="969" alt="Screenshot 2026-11-16 at 18 25 34" src="https://github.com/user-attachments/assets/ac3d8b95-2d40-4080-abf2-57f0ecd0b17c" />
+
+4. (Optional) Implement Authentication using an API Key, JWT, or OAuth2.
+
+   <img width="1512" height="982" alt="Screenshot 2026-11-16 at 18 27 29" src="https://github.com/user-attachments/assets/f1fa47d8-535d-4bc6-9150-4d775e9bcd05" />
+
+   <img width="1031" height="795" alt="Screenshot 2026-11-16 at 18 27 48" src="https://github.com/user-attachments/assets/2a9d9761-9314-458c-a32c-f2b2748e9c7e" />
+
+   <img width="1031" height="790" alt="Screenshot 2026-11-16 at 17 48 56" src="https://github.com/user-attachments/assets/1f57dbdd-e0da-42ad-8cf3-ab467debb280" />
+
+   <img width="1046" height="797" alt="Screenshot 2026-11-16 at 18 28 52" src="https://github.com/user-attachments/assets/947aab29-32fa-40d4-9f7f-e578b948bcc9" />
+
+   <img width="843" height="238" alt="Screenshot 2026-11-16 at 18 31 15" src="https://github.com/user-attachments/assets/258bf1b1-5222-43d0-ba98-bead59007f25" />
+
+
+   - User bisa melihat to do shared, tetapi tidak bisa melihat to do personal user lain
+
+     <img width="1034" height="800" alt="Screenshot 2026-11-16 at 18 30 22" src="https://github.com/user-attachments/assets/6515c5a5-c522-44dd-a563-21a37fdc0551" />
+
+    <img width="1071" height="813" alt="Screenshot 2026-11-16 at 18 30 32" src="https://github.com/user-attachments/assets/44a700ea-ea96-4121-ab9c-555f9be00c86" />
+
+    
+
+
+     
+
+
+
 
 
      
